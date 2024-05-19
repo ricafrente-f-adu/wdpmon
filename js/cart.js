@@ -5,10 +5,18 @@ function togglePopup(){
 let cartItems = []; // array
 
 function addToCart(button) {
+    event.preventDefault(); 
     const cardContent = button.parentElement;
     const itemName = cardContent.querySelector('.item-name').textContent;
     const itemPrice = parseFloat(cardContent.querySelector('.item-price').textContent.replace('₱', '').trim());
+    const quantityInput = cardContent.querySelector('input[type="number"]');
     const quantity = parseInt(cardContent.querySelector('input[type="number"]').value);
+
+    if (quantity <= 0) {
+        alert("Please enter a valid quantity greater than 0.");
+        quantityInput.value = 0;
+        return;
+    }
 
     const item = {
         name: itemName,
@@ -21,6 +29,8 @@ function addToCart(button) {
     updateCartDisplay();
     updateCartStatusImage();
     alert("Added to Cart");
+
+    quantityInput.value = 0;
 }
 
 function updateCartDisplay() {
@@ -71,10 +81,16 @@ function updateCartStatusImage() {
     }
 }
 
-function displayCart() {
-    const name = document.getElementById('name').value;
-    const address = document.getElementById('address').value;
-    const amount = parseFloat(document.getElementById('amount').value);
+function displayCart(event) {
+    event.preventDefault();
+
+    const nameInput = document.getElementById('name');
+    const addressInput = document.getElementById('address');
+    const amountInput = document.getElementById('amount');
+
+    const name = nameInput.value;
+    const address = addressInput.value;
+    const amount = parseFloat(amountInput.value);
     let totalCartPrice = 0;
 
     cartItems.forEach(item => {
@@ -82,6 +98,14 @@ function displayCart() {
     });
 
     const change = amount - totalCartPrice;
+
+    if (amount < totalCartPrice || change < 0) {
+        alert("Your given amount is insufficient.");
+        return;
+    } else if (name == "" || address == "") {
+        alert("Please fill in your name and address.");
+        return;
+    }
 
     let itemsPurchased = '';
     cartItems.forEach(item => {
@@ -92,5 +116,15 @@ function displayCart() {
 
     if (confirm(confirmationMessage)) {
         alert("Thank you for your order!");
+
+        cartItems = [];
+        updateCartDisplay();
+        updateCartStatusImage();
+
+        nameInput.value = "";
+        addressInput.value = "";
+        amountInput.value = "";
+
+        togglePopup();
     }
 }
