@@ -1,0 +1,138 @@
+@font-face {
+    font-family: Poppins;
+    src: url(../font/Poppins-Regular.ttf);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+}
+
+html{
+    scroll-behavior: smooth;
+    scroll-padding: 5rem;
+}
+
+body{
+    font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
+}
+
+nav{
+    display:flex;
+    background: #ffffff;
+    height: 80px;
+    align-items: center;
+    padding-left: 40px;
+    padding-right: 40px;
+    width: 100%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.container{
+    width: 90%;
+    margin: auto;
+    padding-top: 50px;
+}
+
+.logo{
+    display: inline-block;
+    margin: auto;
+}
+
+.logo img{
+    height: 40px;
+}
+
+nav ul{
+    flex: 1;
+    display: inline-block;
+    margin:auto;
+    list-style-type: none;
+    text-align: right;
+}
+
+nav ul li{
+    display: inline-block;
+    margin-right: 40px;
+}
+
+.shopping-cart{
+    cursor: pointer;    
+}
+
+nav ul li a{
+    color: rgb(0, 0, 0);
+}
+
+.btn {
+    display: inline-block;
+    color: #000000;
+    border: 1px solid;
+    background-color: white;
+    padding: 8px 20px;
+    margin: 10px 0;
+    border-radius: 20px;
+}
+
+.btn:hover{
+    color: white;
+    background-color: black;
+    transition: 0.25s;
+}
+
+.container{
+    width: 90%;
+    margin: auto;
+    padding-top: 50px;
+}
+
+.container h1{
+    text-align: center;
+    padding-bottom: 1%;
+}
+
+.contacts {
+    display: flex;
+    flex: 1;
+}
+
+.online-contact{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.online-contact input {
+    width: 100%;
+    padding: 18px 18px 18px 18px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.online-contact textarea {
+    width: 100%;
+    padding: 18px 18px 18px 18px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.online-contact .btn{
+    display: inline-block;
+    margin-top: 10px;
+}
+
+.contact-details{
+    flex: 1;
+    text-align: center;
+}
+
+.contact-details a{
+    text-decoration: underline;
+}

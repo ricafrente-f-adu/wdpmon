@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shenice │ Contact Us</title>
+    <link rel="stylesheet" href="css/styles-contacts.css">
+    <link rel="icon" type="image/png" href="images-shopping/favicon.png">
+</head>
+<body>
+    <nav>
+        <a class="logo" href="index.html">
+            <img src="images-shopping/shenice logo.png">
+        </a>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="products.html">Products/Services</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contacts.html">Contact Us</a></li>
+        </ul>
+        <a id="shoppingCart" href="products.html">
+            <img src="images-shopping/shopping cart.png" width="30px" height="30px">
+        </a>
+    </nav>
+    <div class="container">
+        <h1>Contact Us!</h1>
+        <div class="contacts">
+            <div class="online-contact">
+                <h3 style="text-align: center; padding-bottom: 3%;">Online Inquiry</h3>
+                <form id="inquiry">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" placeholder="Name" required>
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="Email" required>
+                    <label for="message">Message</label><br>
+                    <textarea id="message" name="message" rows="4" placeholder="Message" required></textarea><br>
+                    <a class="btn" href="" onclick="validateForm()">Submit</a>
+                </form>
+            </div>
+            <div class="contact-details">
+                <h3>Contact Details</h3>
+                <br>
+                <a href="mailto:fletcher.ricafrente@adamson.edu.ph">fletcher.ricafrente@adamson.edu.ph</a><br>
+                <a href="">(63) 987 6543 210</a><br><br>
+                <p style="font-weight: bolder;">Shop Address</p>
+                <p>Suite 547 2244 Young Estate</p>
+                <p>Juliomouth, CT 52027</p>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        document.getElementById('shoppingCart').addEventListener('click', function(event) {
+            event.preventDefault();
+            alert('Please visit our Products section in order to use the functionality.');
+            window.location.href = 'products.html';
+        });
+
+        function validateForm() {
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+
+            if (!name || !email || !message) {
+                alert('All fields are required!');
+            } else {
+                alert('Form submitted successfully!');
+                // Here you can add the code to actually submit the form, for example using AJAX
+            }
+        }
+    </script>
+</body>
+</html>
