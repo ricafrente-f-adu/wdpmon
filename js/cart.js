@@ -112,10 +112,13 @@ function displayCart(event) {
         itemsPurchased += `${item.quantity} x ${item.name} (₱ ${item.price} each, Total: ₱ ${item.totalPrice})\n`;
     });
 
-    const confirmationMessage = `Confirm your order details:\n\nName: ${name}\nAddress: ${address}\n\nItems Purchased:\n${itemsPurchased}\nTotal Cart Price: ₱ ${totalCartPrice}\nGiven Amount: ₱ ${amount}\nChange: ₱ ${change.toFixed(2)}\n\nIs this information correct?`;
+    const confirmationMessage = `Confirm your order details:\n\nName: ${name}\nAddress: ${address}\n\nItems Purchased:\n${itemsPurchased}\nTotal Cart Price: ₱ ${totalCartPrice}\nGiven Amount: ₱ ${amount}\nChange: ₱ ${change.toFixed(2)}\n\nProceed to order confimration?`;
 
     if (confirm(confirmationMessage)) {
-        alert("Thank you for your order!");
+        const confirmationMessage = `Do you confirm all of your order details?`;
+        if (confirm(confirmationMessage)){
+            alert("Thank you for your order!");
+        }
 
         cartItems = [];
         updateCartDisplay();
