@@ -75,9 +75,9 @@ function updateCartDisplay() {
 function updateCartStatusImage() {
     const cartStatusImage = document.getElementById('shopping-icon');
     if (cartItems.length > 0) {
-        cartStatusImage.src = "images-shopping/shopping cart-loaded.png";
+        cartStatusImage.src = "images-shopping/shopping-cart-loaded.png";
     } else {
-        cartStatusImage.src = "images-shopping/shopping cart.png";
+        cartStatusImage.src = "images-shopping/shopping-cart.png";
     }
 }
 
