@@ -3,367 +3,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shenice │ Products</title>
-    <link rel="stylesheet" href="css/styles-products.css">
+    <title>Shenice │ Home</title>
+    <link rel="stylesheet" href="css/styles.css">
     <link rel="icon" type="image/png" href="images-shopping/favicon.png">
-    <script src="js/cart.js"></script>
 </head>
+
 <body>
-    <div class="popup" id="popup-1">
-        <div class="overlay"></div>
-        <div class="content">
-            <div class="close-btn" onclick="togglePopup()">&times;</div>
-            <h2>Your Cart:</h2>
-            <table class="cart-table" id="cart-table">
-                <thead>
-                    <tr>
-                        <th>Item Name</th>
-                        <th>Quantity</th>
-                        <th>Price per Item</th>
-                        <th>Total Price</th>
-                    </tr>
-                </thead>
-                <tbody></tbody>
-            </table>
-            <div class="order-details">
-                <label for="name">Name:</label><br>
-                <input type="text" id="name"><br>
-                <label for="address">Address:</label><br>
-                <input type="text" id="address"><br>
-                <label for="amount">Amount Given:</label><br>
-                <input type="number" id="amount"><br>
+    <!-- HEADER -->
+    <div class="header">
+        <div class="container-1">
+            <div class="navbar">
+                <div class="logo">
+                    <img src="images-shopping/shenice logo.png" width="200px">
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="products.html">Products/Services</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contacts.html">Contact Us</a></li>
+                    </ul>
+                </nav>
+                <a id="shoppingCart" href="products.html"><img src="images-shopping/shopping cart.png" width="30px" height="30px"></a>
             </div>
-            <a style="text-align: center;" href="" class="btn" onclick="displayCart(event)">Order</a>
-        </div>
-    </div>
-    <!--NAV BAR-->
-    <nav>
-        <a class="logo" href="index.html">
-            <img src="images-shopping/shenice-logo.png" alt="Shenice Logo">
-        </a>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="products.html">Products/Services</a></li>
-            <li><a href="about.html">About Us</a></li>
-            <li><a href="contacts.html">Contact Us</a></li>
-        </ul>
-        <div class="shopping-cart" onclick="togglePopup()">
-            <img id="shopping-icon" src="images-shopping/shopping-cart.png" width="30" height="30" alt="Shopping Cart Icon">
-        </div>
-    </nav>
-    <!--HEADER-->
-    <div class="header-products">
-        <div class="header-container">
-            <div class="header-text">
-                <h1>Vinyls at a Great Deal!</h1>
-                <p>Get exclusive deals from our shop at 1500 per vinyl</p>
-            </div>
-        </div>
-    </div>
-    <div class="sections">
-        <div class="sections-container">
-            <a href="#trending" class="btn">Trending Items</a>
-            <a href="#vinyls" class="btn">Vinyls</a>
-            <a href="#cds" class="btn">CDs</a>
-            <a href="#cassettes" class="btn">Cassettes</a>
-        </div>
-    </div>
-    <!--TITLE AND SECTION-->
-    <div id="trending" class="cards">
-        <h1 class="products-heading">Trending Items</h1>
-        <div class="grid-container">
-            <div class="grid">
-                <div class="card">
-                    <img src="images-shopping/kendrick-notlikeus-top1.png" alt="Not Like Us Vinyl Album Cover">
-                    <div class="card-content">
-                        <h3 class="item-name">Not Like Us - Vinyl</h3>
-                        <p class="item-price">₱ 1500</p>
-                        <p style="padding-top: 2px; padding-bottom: 10px;">★★★★★</p>
-                        <label for="quantity" style="padding-right: 1em;">Quantity:</label>
-                        <input style="width: 8em;" type="number" id="quantity" name="quantity">
-                        <a href="#" class="btn" onclick="addToCart(this)">Add to Cart</a>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="images-shopping/liluzivert-top2.png" alt="Pink Tape CD Album Cover">
-                    <div class="card-content">
-                        <h3 class="item-name">Pink Tape - CD</h3>
-                        <p class="item-price">₱ 450</p>
-                        <p style="padding-top: 2px; padding-bottom: 10px;">★☆☆☆☆</p>
-                        <label for="quantity" style="padding-right: 1em;">Quantity:</label>
-                        <input style="width: 8em;" type="number" id="quantity" name="quantity"> 
-                        <a href="#" class="btn" onclick="addToCart(this)">Add to Cart</a>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="images-shopping/weezer-top3.png" alt="Weezer Blue Vinyl Album Cover">
-                    <div class="card-content">
-                        <h3 class="item-name">Weezer (Blue) - Vinyl</h3>
-                        <p class="item-price">₱ 1680</p>
-                        <p style="padding-top: 2px; padding-bottom: 10px;">★☆☆☆☆</p>
-                        <label for="quantity" style="padding-right: 1em;">Quantity:</label>
-                        <input style="width: 8em;" type="number" id="quantity" name="quantity"> 
-                        <a href="#" class="btn" onclick="addToCart(this)">Add to Cart</a>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="images-shopping/phoebe-bridgers-top4.png" alt="Punisher Cassette Album Cover">
-                    <div class="card-content">
-                        <h3 class="item-name">Punisher - Cassette</h3>
-                        <p class="item-price">₱ 1500</p>
-                        <p style="padding-top: 2px; padding-bottom: 10px;">★★★★★</p>
-                        <label for="quantity" style="padding-top: 1em; padding-right: 1em;">Quantity:</label>
-                        <input style="width: 8em;" type="number" id="quantity" name="quantity"> 
-                        <a href="#" class="btn" onclick="addToCart(this)">Add to Cart</a>
-                    </div>
+            <div class="header-row">
+                <div class="header-content">
+                    <h1>The Best Record<br>Store In The World</h1>
+                    <p>Dubbed by The Rolling Stones as the "The greatest, most<br> eloquent and inspiring record store in the history of humanity"</p>
+                    <a href="#collage" class="btn">Learn more!</a>
                 </div>
             </div>
         </div>
     </div>
-    <div id="vinyls" class="cards">
-        <h1 style="padding-top: 1em" class="products-heading">Vinyls</h1>
-        <div class="grid-container">
-            <div class="grid">
-                <div class="card">
-                    <img src="images-shopping/the-fragile.png" alt="The Fragile Vinyl Album Cover">
-                    <div class="card-content">
-                        <h3 class="item-name">The Fragile - Vinyl</h3>
-                        <p class="item-price">₱ 1500</p>
-                        <p style="padding-top: 2px; padding-bottom: 10px;">★★★★★</p>
-                        <label for="quantity" style="padding-right: 1em;">Quantity:</label>
-                        <input style="width: 8em;" type="number" id="quantity" name="quantity">
-                        <a href="#" class="btn" onclick="addToCart(this)">Add to Cart</a>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="images-shopping/jojosiwa-karma.png" alt="Karma Vinyl Album Cover">
-                    <div class="card-content">
-                        <h3 class="item-name">Karma - Vinyl</h3>
-                        <p class="item-price">₱ 1500</p>
-                        <p style="padding-top: 2px; padding-bottom: 10px;">★★★★☆</p>
-                        <label for="quantity" style="padding-right: 1em;">Quantity:</label>
-                        <input style="width: 8em;" type="number" id="quantity" name="quantity"> 
-                        <a href="#" class="btn" onclick="addToCart(this)">Add to Cart</a>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="images-shopping/hevabi.png" alt="Kung Alam Mo Lang Vinyl Album Cover">
-                    <div class="card-content">
-                        <h3 class="item-name">Kung Alam Mo Lang - Vinyl</h3>
-                        <p class="item-price">₱ 1500</p>
-                        <p style="padding-top: 2px; padding-bottom: 10px;">★★★☆☆</p>
-                        <label for="quantity" style="padding-right: 1em;">Quantity:</label>
-                        <input style="width: 8em;" type="number" id="quantity" name="quantity"> 
-                        <a href="#" class="btn" onclick="addToCart(this)">Add to Cart</a>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="images-shopping/ben&ben.png" alt="LIMASAWA STREET Vinyl Album Cover">
-                    <div class="card-content">
-                        <h3 class="item-name">LIMASAWA STREET - Vinyl</h3>
-                        <p class="item-price">₱ 1510</p>
-                        <p style="padding-top: 2px; padding-bottom: 10px;">★★★★★</p>
-                        <label for="quantity" style="padding-top: 1em; padding-right: 1em;">Quantity:</label>
-                        <input style="width: 8em;" type="number" id="quantity" name="quantity"> 
-                        <a href="#" class="btn" onclick="addToCart(this)">Add to Cart</a>
-                    </div>
-                </div>
-            </div>
-            <div class="grid">
-                <div class="card">
-                    <img src="images-shopping/weezer.png" alt="Weezer Blue Vinyl Album Cover">
-                    <div class="card-content">
-                        <h3 class="item-name">Weezer (Blue) - Vinyl</h3>
-                        <p class="item-price">₱ 1680</p>
-                        <p style="padding-top: 2px;">★☆☆☆☆</p>
-                        <label for="quantity" style="padding-right: 1em;">Quantity:</label>
-                        <input style="width: 8em;" type="number" id="quantity" name="quantity"> 
-                        <a href="#" class="btn" onclick="addToCart(this)">Add to Cart</a>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="images-shopping/ladygaga.png" alt="Born This Way Vinyl Album Cover">
-                    <div class="card-content">
-                        <h3 class="item-name">Born This Way - Vinyl</h3>
-                        <p class="item-price">₱ 1270</p>
-                        <p style="padding-top: 2px;">★★☆☆☆</p>
-                        <label for="quantity" style="padding-right: 1em;">Quantity:</label>
-                        <input style="width: 8em;" type="number" id="quantity" name="quantity"> 
-                        <a href="#" class="btn" onclick="addToCart(this)">Add to Cart</a>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="images-shopping/drake.png" alt="Certified Lover Boy Vinyl Album Cover">
-                    <div class="card-content">
-                        <h3 class="item-name">Certified Lover Boy - Vinyl</h3>
-                        <p class="item-price">₱ 890</p>
-                        <p style="padding-top: 2px;">☆☆☆☆☆</p>
-                        <label for="quantity" style="padding-right: 1em;">Quantity:</label>
-                        <input style="width: 8em;" type="number" id="quantity" name="quantity"> 
-                        <a href="#" class="btn" onclick="addToCart(this)">Add to Cart</a>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="images-shopping/kendrick-notlikeus.png" alt="Not Like Us Vinyl Album Cover">
-                    <div class="card-content">
-                        <h3 class="item-name">Not Like Us - Vinyl</h3>
-                        <p class="item-price">₱ 2100</p>
-                        <p style="padding-top: 2px;">★★★★★</p>
-                        <label for="quantity" style="padding-right: 1em;">Quantity:</label>
-                        <input style="width: 8em;" type="number" id="quantity" name="quantity">
-                        <a href="#" class="btn" onclick="addToCart(this)">Add to Cart</a>
-                    </div>
-                </div>
-            </div>
+   <!-- COLLAGE -->
+    <section id="collage" class="collage">
+        <div class="grid">
+            <a class="card" href="about.html"><img src="images-shopping/ABOUT US.png"></a>
+            <a class="card" href="products.html#cds"><img src="images-shopping/CDS.png"></a>
+            <a class="card" href="contacts.html"><img src="images-shopping/CONTACT US.png"></a>
+            <a class="card" href="products.html#trending"><img src="images-shopping/TRENDING ITEMS.png"></a>
+            <a class="card" href="products.html#vinyls"><img src="images-shopping/VINYLS.png"></a>
+            <a class="card" href="products.html#cassettes"><img src="images-shopping/CASETTES.png"></a>
         </div>
-    </div>
-    <div id="cds" class="cards">
-        <h1 style="padding-top: 1em" class="products-heading">CDs</h1>
-        <div class="grid-container">
-            <div class="grid">
-                <div class="card">
-                    <img src="images-shopping/the-black-parade-cd.png" alt="The Black Parade CD Album Cover">
-                    <div class="card-content">
-                        <h3 class="item-name">The Black Parade - CD</h3>
-                        <p class="item-price">₱ 510</p>
-                        <p style="padding-top: 2px; padding-bottom: 10px;">★★★★☆</p>
-                        <label for="quantity" style="padding-right: 1em;">Quantity:</label>
-                        <input style="width: 8em;" type="number" id="quantity" name="quantity">
-                        <a href="#" class="btn" onclick="addToCart(this)">Add to Cart</a>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="images-shopping/depeche86-cd.png" alt="The Singles 86-98 CD Album Cover">
-                    <div class="card-content">
-                        <h3 class="item-name">The Singles 86-98 - CD</h3>
-                        <p class="item-price">₱ 630</p>
-                        <p style="padding-top: 2px; padding-bottom: 10px;">★★★★★</p>
-                        <label for="quantity" style="padding-right: 1em;">Quantity:</label>
-                        <input style="width: 8em;" type="number" id="quantity" name="quantity"> 
-                        <a href="#" class="btn" onclick="addToCart(this)">Add to Cart</a>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="images-shopping/in-utero.png" alt="In Utero Deluxe Edition CD Album Cover">
-                    <div class="card-content">
-                        <h3 class="item-name">In Utero (Deluxe Edition) - CD</h3>
-                        <p class="item-price">₱ 850</p>
-                        <p style="padding-top: 2px; padding-bottom: 10px;">★★★★★</p>
-                        <label for="quantity" style="padding-right: 1em;">Quantity:</label>
-                        <input style="width: 8em;" type="number" id="quantity" name="quantity"> 
-                        <a href="#" class="btn" onclick="addToCart(this)">Add to Cart</a>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="images-shopping/duster.png" alt="Stratosphere CD Album Cover">
-                    <div class="card-content">
-                        <h3 class="item-name">Stratosphere - CD</h3>
-                        <p class="item-price">₱ 695</p>
-                        <p style="padding-top: 2px; padding-bottom: 10px;">★★★☆☆</p>
-                        <label for="quantity" style="padding-top: 1em; padding-right: 1em;">Quantity:</label>
-                        <input style="width: 8em;" type="number" id="quantity" name="quantity"> 
-                        <a href="#" class="btn" onclick="addToCart(this)">Add to Cart</a>
-                    </div>
-                </div>
-            </div>
-            <div class="grid">
-                <div class="card">
-                    <img src="images-shopping/liluzivert.png" alt="Pink Tape CD Album Cover">
-                    <div class="card-content">
-                        <h3 class="item-name">Pink Tape - CD</h3>
-                        <p class="item-price">₱ 450</p>
-                        <p style="padding-top: 2px;">★☆☆☆☆</p>
-                        <label for="quantity" style="padding-right: 1em;">Quantity:</label>
-                        <input style="width: 8em;" type="number" id="quantity" name="quantity"> 
-                        <a href="#" class="btn" onclick="addToCart(this)">Add to Cart</a>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="images-shopping/disintegration.png" alt="Disintegration CD Album Cover">
-                    <div class="card-content">
-                        <h3 class="item-name">Disintegration - CD</h3>
-                        <p class="item-price">₱ 550</p>
-                        <p style="padding-top: 2px;">★★★★☆</p>
-                        <label for="quantity" style="padding-right: 1em;">Quantity:</label>
-                        <input style="width: 8em;" type="number" id="quantity" name="quantity"> 
-                        <a href="#" class="btn" onclick="addToCart(this)">Add to Cart</a>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="images-shopping/laufey.png" alt="Bewitched CD Album Cover">
-                    <div class="card-content">
-                        <h3 class="item-name">Bewitched - CD</h3>
-                        <p class="item-price">₱ 770</p>
-                        <p style="padding-top: 2px;">★★★☆☆</p>
-                        <label for="quantity" style="padding-right: 1em;">Quantity:</label>
-                        <input style="width: 8em;" type="number" id="quantity" name="quantity"> 
-                        <a href="#" class="btn" onclick="addToCart(this)">Add to Cart</a>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="images-shopping/sgtpeppers.png" alt="Sgt. Pepper's CD Album Cover">
-                    <div class="card-content">
-                        <h3 class="item-name">Sgt. Pepper's - CD</h3>
-                        <p class="item-price">₱ 890</p>
-                        <p style="padding-top: 2px;">★★★★★</p>
-                        <label for="quantity" style="padding-right: 1em;">Quantity:</label>
-                        <input style="width: 8em;" type="number" id="quantity" name="quantity">
-                        <a href="#" class="btn" onclick="addToCart(this)">Add to Cart</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div id="cassettes" class="cards">
-        <h1 style="padding-top: 1em" class="products-heading">Cassettes</h1>
-        <div class="grid-container">
-            <div class="grid">
-                <div class="card">
-                    <img src="images-shopping/igor.png" alt="IGOR Cassette Album Cover">
-                    <div class="card-content">
-                        <h3 class="item-name">IGOR - Cassette</h3>
-                        <p class="item-price">₱ 775</p>
-                        <p style="padding-top: 2px; padding-bottom: 10px;">★★★★★</p>
-                        <label for="quantity" style="padding-right: 1em;">Quantity:</label>
-                        <input style="width: 8em;" type="number" id="quantity" name="quantity">
-                        <a href="#" class="btn" onclick="addToCart(this)">Add to Cart</a>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="images-shopping/billieeililsh.png" alt="Happier Than Ever Cassette Album Cover">
-                    <div class="card-content">
-                        <h3 class="item-name">Happier Than Ever - Cassette</h3>
-                        <p class="item-price">₱ 895</p>
-                        <p style="padding-top: 2px; padding-bottom: 10px;">★★★☆☆</p>
-                        <label for="quantity" style="padding-right: 1em;">Quantity:</label>
-                        <input style="width: 8em;" type="number" id="quantity" name="quantity"> 
-                        <a href="#" class="btn" onclick="addToCart(this)">Add to Cart</a>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="images-shopping/alvvays.png" alt="Alvvays Cassette Album Cover">
-                    <div class="card-content">
-                        <h3 class="item-name">Alvvays - Cassette</h3>
-                        <p class="item-price">₱ 595</p>
-                        <p style="padding-top: 2px; padding-bottom: 10px;">★★★★☆</p>
-                        <label for="quantity" style="padding-right: 1em;">Quantity:</label>
-                        <input style="width: 8em;" type="number" id="quantity" name="quantity"> 
-                        <a href="#" class="btn" onclick="addToCart(this)">Add to Cart</a>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="images-shopping/phoebe-bridgers.png" alt="Punisher Cassette Album Cover">
-                    <div class="card-content">
-                        <h3 class="item-name">Punisher- Cassette</h3>
-                        <p class="item-price">₱ 660</p>
-                        <p style="padding-top: 2px; padding-bottom: 10px;">★★★★☆</p>
-                        <label for="quantity" style="padding-top: 1em; padding-right: 1em;">Quantity:</label>
-                        <input style="width: 8em;" type="number" id="quantity" name="quantity"> 
-                        <a href="#" class="btn" onclick="addToCart(this)">Add to Cart</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    </section>
+    <script>
+        document.getElementById('shoppingCart').addEventListener('click', function(event) {
+            event.preventDefault();
+            alert('Please visit our Products section in order to use the functionality.');
+            window.location.href = 'products.html';
+        });
+    </script>
 </body>
 </html>
